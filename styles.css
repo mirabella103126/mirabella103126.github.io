@@ -45,8 +45,6 @@ h1 em { display: block; color: var(--orange); font-weight: 400; }
 .ceremony { background: var(--cream); }
 .party { background: var(--ink); color: var(--cream); }
 .cardMeta { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
-.cardNumber { color: var(--violet); font-family: Georgia, serif; font-size: 20px; font-weight: 700; letter-spacing: .08em; }
-.party .cardNumber { color: var(--orange); }
 .cardLabel { color: var(--violet); }
 .party .cardLabel { color: var(--orange); }
 .eventCard h3 { font-size: clamp(42px, 4vw, 62px); line-height: .98; letter-spacing: -.035em; margin: 26px 0 30px; position: relative; z-index: 1; }
