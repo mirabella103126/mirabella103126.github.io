@@ -17,7 +17,7 @@ section[id], article[id] { scroll-margin-top: 82px; }
 .hero::before { left: -28vw; }
 .hero::after { right: -28vw; }
 .nav { position: fixed; z-index: 20; top: 0; left: 0; width: 100%; display: flex; justify-content: flex-end; align-items: center; padding: 14px clamp(22px, 5vw, 80px); color: var(--cream); background: rgba(23,19,26,.9); border-bottom: 2px solid rgba(108,58,131,.5); box-shadow: 0 6px 24px rgba(0,0,0,.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 16px; letter-spacing: .1em; }
-.nav::before { content: "JUMP TO  ↓"; margin-right: auto; color: var(--orange); font-weight: 700; }
+.nav::before { content: "JUMP TO  ↓"; margin-right: 28px; color: var(--orange); font-weight: 700; }
 .navLinks { display: flex; align-items: center; gap: 28px; }
 .navLinks a { padding: 11px 4px; border-bottom: 1px solid transparent; transition: color .2s ease, border-color .2s ease; }
 .navLinks a:hover, .navLinks a:focus-visible { color: var(--orange); border-bottom-color: var(--orange); }
