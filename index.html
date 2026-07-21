@@ -4,10 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Please join us in Philadelphia for a meaningful morning and a spirited Halloween celebration.">
+    <meta name="robots" content="noindex, nofollow, noarchive">
     <title>Mirabella's Bat Mitzvah Celebration | October 31, 2026</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="locked">
+    <section class="accessGate" id="accessGate" aria-labelledby="accessTitle">
+      <div class="gateCard">
+        <div class="gateOrnament" aria-hidden="true">✦</div>
+        <p class="kicker">BY INVITATION</p>
+        <h1 id="accessTitle">A little magic<br>is required</h1>
+        <p>Enter the invitation password to continue.</p>
+        <form class="accessForm" id="accessForm">
+          <label for="accessPassword">Password</label>
+          <div class="passwordRow">
+            <input id="accessPassword" name="password" type="password" autocomplete="current-password" required>
+            <button type="submit">Enter <span aria-hidden="true">→</span></button>
+          </div>
+          <p class="accessError" id="accessError" role="alert" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
     <main>
       <section class="hero" id="home">
         <nav class="nav" aria-label="Main navigation">
@@ -140,5 +157,6 @@
         <span class="footerMark">✦</span>
       </footer>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
