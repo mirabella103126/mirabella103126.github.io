@@ -28,7 +28,7 @@ section[id], article[id] { scroll-margin-top: 82px; }
 h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 h1 { font-size: clamp(52px, 8.4vw, 122px); line-height: .82; letter-spacing: -.045em; margin: 27px 0 28px; }
 h1 em { display: block; color: var(--orange); font-weight: 400; }
-.titleBat { display: inline-block; margin: 0 .06em; font-family: Arial, Helvetica, sans-serif; font-size: .42em; line-height: 1; vertical-align: .22em; letter-spacing: 0; transform: rotate(-6deg); }
+.titleBat { display: inline-block; width: .58em; height: .32em; margin: 0 .06em; vertical-align: .12em; background: var(--orange); clip-path: polygon(0 40%, 14% 18%, 26% 34%, 38% 8%, 44% 36%, 50% 24%, 56% 36%, 62% 8%, 74% 34%, 86% 18%, 100% 40%, 82% 48%, 72% 74%, 58% 58%, 50% 88%, 42% 58%, 28% 74%, 18% 48%); transform: rotate(-4deg); }
 .heroIntro { color: #d9cedc; line-height: 1.7; margin: 0 0 36px; font-family: Georgia, serif; font-size: 17px; }
 .dateLockup { width: min(760px, 100%); padding: 18px 0; border-top: 1px solid rgba(245,239,229,.25); border-bottom: 1px solid rgba(245,239,229,.25); display: grid; grid-template-columns: auto auto auto; justify-content: center; gap: clamp(22px, 4vw, 58px); align-items: center; font-size: 16px; letter-spacing: .2em; }
 .dateLockup strong { font-family: Georgia, serif; color: var(--orange); font-size: 42px; font-weight: 400; line-height: 1; }
