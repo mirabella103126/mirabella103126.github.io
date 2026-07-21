@@ -16,9 +16,11 @@ section[id], article[id] { scroll-margin-top: 82px; }
 .hero::before, .hero::after { content: ""; position: absolute; width: 42vw; height: 42vw; border: 1px solid rgba(242,104,34,.18); border-radius: 50%; top: 24%; }
 .hero::before { left: -28vw; }
 .hero::after { right: -28vw; }
-.nav { position: fixed; z-index: 20; top: 0; left: 0; width: 100%; display: flex; justify-content: flex-end; align-items: center; padding: 18px clamp(22px, 5vw, 80px); color: var(--cream); background: rgba(23,19,26,.86); border-bottom: 1px solid rgba(245,239,229,.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 16px; letter-spacing: .16em; }
+.nav { position: fixed; z-index: 20; top: 0; left: 0; width: 100%; display: flex; justify-content: flex-end; align-items: center; padding: 14px clamp(22px, 5vw, 80px); color: var(--cream); background: rgba(23,19,26,.9); border-bottom: 2px solid rgba(108,58,131,.5); box-shadow: 0 6px 24px rgba(0,0,0,.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); font-size: 16px; letter-spacing: .1em; }
+.nav::before { content: "JUMP TO  ↓"; margin-right: auto; color: var(--orange); font-weight: 700; }
 .navLinks { display: flex; align-items: center; gap: 28px; }
-.navLinks a { padding: 11px 4px; }
+.navLinks a { padding: 11px 4px; border-bottom: 1px solid transparent; transition: color .2s ease, border-color .2s ease; }
+.navLinks a:hover, .navLinks a:focus-visible { color: var(--orange); border-bottom-color: var(--orange); }
 .heroOrnament { display: flex; gap: 15px; margin: auto 0 20px; color: var(--orange); font-size: 16px; }
 .heroOrnament span:nth-child(2) { transform: scale(1.7); }
 .eyebrow, .kicker, .cardLabel { margin: 0; font-size: 16px; font-weight: 700; letter-spacing: .28em; }
@@ -27,9 +29,9 @@ h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; }
 h1 { font-size: clamp(52px, 8.4vw, 122px); line-height: .82; letter-spacing: -.045em; margin: 27px 0 28px; }
 h1 em { display: block; color: var(--orange); font-weight: 400; }
 .heroIntro { color: #d9cedc; line-height: 1.7; margin: 0 0 36px; font-family: Georgia, serif; font-size: 17px; }
-.dateLockup { width: min(760px, 100%); padding: 18px 0; border-top: 1px solid rgba(245,239,229,.25); border-bottom: 1px solid rgba(245,239,229,.25); display: grid; grid-template-columns: repeat(4, auto); justify-content: center; gap: clamp(16px, 3vw, 38px); align-items: center; font-size: 16px; letter-spacing: .2em; }
+.dateLockup { width: min(760px, 100%); padding: 18px 0; border-top: 1px solid rgba(245,239,229,.25); border-bottom: 1px solid rgba(245,239,229,.25); display: grid; grid-template-columns: auto auto auto; justify-content: center; gap: clamp(22px, 4vw, 58px); align-items: center; font-size: 16px; letter-spacing: .2em; }
 .dateLockup strong { font-family: Georgia, serif; color: var(--orange); font-size: 42px; font-weight: 400; line-height: 1; }
-.dateLockup span:nth-child(2) { font-family: Georgia, serif; color: var(--orange); font-size: 42px; font-weight: 400; line-height: 1; letter-spacing: 0; text-transform: capitalize; }
+.dateMain { display: inline-flex; align-items: baseline; gap: 14px; white-space: nowrap; font-family: Georgia, serif; color: var(--orange); font-size: 42px; font-weight: 400; line-height: 1; letter-spacing: 0; }
 .scrollCue { margin-top: auto; padding-top: 34px; font-size: 16px; letter-spacing: .18em; text-transform: uppercase; }
 .scrollCue span { color: var(--orange); margin-left: 10px; }
 .day { padding: clamp(90px, 10vw, 150px) clamp(22px, 7vw, 110px); background: var(--paper); }
@@ -42,8 +44,9 @@ h1 em { display: block; color: var(--orange); font-weight: 400; }
 .eventCard > :not(.moon) { position: relative; z-index: 1; }
 .ceremony { background: var(--cream); }
 .party { background: var(--ink); color: var(--cream); }
-.cardNumber { position: absolute; top: 30px; right: 34px; color: #b7abb1; font-family: Georgia, serif; font-size: 16px; }
-.party .cardNumber { color: #766e78; }
+.cardMeta { display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+.cardNumber { color: var(--violet); font-family: Georgia, serif; font-size: 20px; font-weight: 700; letter-spacing: .08em; }
+.party .cardNumber { color: var(--orange); }
 .cardLabel { color: var(--violet); }
 .party .cardLabel { color: var(--orange); }
 .eventCard h3 { font-size: clamp(42px, 4vw, 62px); line-height: .98; letter-spacing: -.035em; margin: 26px 0 30px; position: relative; z-index: 1; }
@@ -93,15 +96,19 @@ footer { padding: 26px clamp(22px, 7vw, 110px); display: flex; justify-content: 
 .footerMark { color: var(--orange); }
 
 @media (max-width: 720px) {
-  .nav { justify-content: center; padding: 10px 14px; font-size: 16px; letter-spacing: .08em; }
-  .navLinks { width: 100%; justify-content: space-between; gap: 8px; }
+  .nav { justify-content: flex-end; padding: 10px 14px; font-size: 16px; letter-spacing: .04em; }
+  .nav::before { content: "↓"; margin-right: 14px; }
+  .navLinks { width: auto; justify-content: flex-end; gap: clamp(12px, 5vw, 24px); }
   .navLinks a { padding: 10px 2px; }
   .hero { min-height: 820px; }
   .hero::before, .hero::after { width: 80vw; height: 80vw; }
   h1 { font-size: clamp(54px, 17vw, 78px); }
-  .dateLockup { width: min(330px, 100%); grid-template-columns: repeat(2, minmax(0, auto)); gap: 12px 28px; }
-  .dateLockup span { font-size: 16px; }
-  .dateLockup span:nth-child(2) { font-size: 42px; }
+  .dateLockup { width: min(330px, 100%); grid-template-columns: 1fr 1fr; gap: 14px 28px; }
+  .dateLockup > span:not(.dateMain) { font-size: 16px; }
+  .dateLockup > span:first-child { justify-self: start; }
+  .dateLockup > span:last-child { justify-self: end; }
+  .dateMain { grid-column: 1 / -1; grid-row: 2; justify-self: center; font-size: 42px; }
+  .dateMain > span { font-size: inherit; }
   .eventCards { grid-template-columns: 1fr; }
   .eventCard { min-height: auto; }
   dl > div { grid-template-columns: 112px minmax(0, 1fr); gap: 14px; }
