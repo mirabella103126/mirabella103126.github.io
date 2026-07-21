@@ -1,5 +1,5 @@
 const ACCESS_KEY = "mirabella-invitation-access-v1";
-const PASSWORD_HASH = "e15f8c3cba82c788b2f29538220b32a90e1948b3169a69244b43f611f9cb7845";
+const PASSWORD_HASH = "73740548d223792c35f0e1df5a5c543221786947281313a06fcf872af283816e";
 
 const form = document.querySelector("#accessForm");
 const passwordInput = document.querySelector("#accessPassword");
@@ -8,6 +8,13 @@ const errorMessage = document.querySelector("#accessError");
 function unlockSite() {
   document.body.classList.remove("locked");
   document.querySelector("#accessGate").setAttribute("hidden", "");
+  requestAnimationFrame(() => {
+    const currentLink = document.querySelector('[aria-current="page"]');
+    const navLinks = document.querySelector(".navLinks");
+    if (currentLink && navLinks) {
+      navLinks.scrollLeft = currentLink.offsetLeft - (navLinks.clientWidth - currentLink.offsetWidth) / 2;
+    }
+  });
 }
 
 async function hashPassword(value) {
